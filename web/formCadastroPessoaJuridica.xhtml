@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro de Pessoa Jurídica</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h1>Cadastro de pessoa Jurídica</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                
+                <p:outputLabel value="ID"></p:outputLabel>
+                <p:outputLabel value="#{guiPessoaJuridica.pessoaJuridica.id}"></p:outputLabel>
+                
+                <p:outputLabel value="Nome"></p:outputLabel>
+                <p:inputText value="#{guiPessoaJuridica.pessoaJuridica.nome}"></p:inputText>
+                
+                <p:outputLabel value="CNPJ"></p:outputLabel>
+                <p:inputText value="#{guiPessoaJuridica.pessoaJuridica.cnpj}"></p:inputText>
+                
+                <p:outputLabel value="Endereço"></p:outputLabel>
+                <p:inputText value="#{guiPessoaJuridica.pessoaJuridica.endereco}"></p:inputText>
+                
+                <p:outputLabel value="Telefone"></p:outputLabel>
+                <p:inputText value="#{guiPessoaJuridica.pessoaJuridica.telefone}"></p:inputText>
+                
+                <p:commandButton value="Gravar" action="#{guiPessoaJuridica.gravar()}" ajax="false"></p:commandButton>
+                
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

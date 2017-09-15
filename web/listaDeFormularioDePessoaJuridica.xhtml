@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lista de Pessoa Jurídica</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <p:commandButton value="Novo" action="#{guiPessoaJuridica.novo()}" ajax="false" />
+        <p:dataTable id="tablePessoas" value="#{guiPessoaJuridica.pessoasFisicas}" var="pessoa">
+            
+            <p:column headerText="Código"><p:outputLabel value="#{pessoa.id}" /></p:column>
+            <p:column headerText="CPF"><p:outputLabel value="#{pessoa.cpf}" /></p:column>
+            <p:column headerText="Nome"><p:outputLabel value="#{pessoa.nome}" /></p:column>
+            <p:column headerText="Endereço"><p:outputLabel value="#{pessoa.endereco}" /></p:column>
+            <p:column headerText="Telefone"><p:outputLabel value="#{pessoa.telefone}" /></p:column>
+            <p:column headerText="Ações">
+                <p:commandButton value="Alterar" action="#{guiPessoaJuridica.alterar(pessoa)}" ajax="false" />
+                <p:commandButton value="Excluir"action="#{guiPessoaJuridica.excluir(pessoa)}" ajax="true" update="tablePessoas"/>
+            </p:column>
+            
+        </p:dataTable>
+    </h:body>
+</html>
