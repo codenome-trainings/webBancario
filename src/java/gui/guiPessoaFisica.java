@@ -66,7 +66,7 @@ public class guiPessoaFisica {
     public String excluir(PessoaFisica pessoafisica) {
         Dados dados = new PessoaFisicaDAO();
         try {
-            dados.excluir(this.pessoaFisica);
+            dados.excluir(pessoaFisica);
         } catch (Exception e){
             System.out.println(e.getMessage());
         }

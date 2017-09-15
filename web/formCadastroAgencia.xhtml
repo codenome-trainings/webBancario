@@ -19,8 +19,10 @@
                     <p:selectOneMenu id="bancos" value="#{guiAgencia.bancos}">
                         <f:selectItems value="#{guiAgencia.bancos}" />
                     </p:selectOneMenu>
-                    
                 </h:panelGrid>
+                
+                <h:commandButton action="#{guiAgencia.gravar()}" />
+                
             </h:panelGrid>
         </h:form>
     </h:body>

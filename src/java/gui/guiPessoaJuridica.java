@@ -65,10 +65,10 @@ public class guiPessoaJuridica {
         return "formCadastroPessoaJuridica";
     }
     
-    public String excluir() {
+    public String excluir(PessoaJuridica pessoaJuridica) {
         Dados dados = new PessoaFisicaDAO();
         try {
-            dados.excluir(this.pessoaJuridica);
+            dados.excluir(pessoaJuridica);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

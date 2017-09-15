@@ -13,33 +13,33 @@ import model.PessoaJuridica;
  *
  * @author thiago
  */
-public class PessoaJuridicaDAO implements Dados{
-    
+public class PessoaJuridicaDAO implements Dados {
+
     private static List<PessoaJuridica> pessoasJuridicas;
 
     public PessoaJuridicaDAO() {
         this.pessoasJuridicas = new ArrayList<>();
     }
-    
+
     @Override
     public void gravar(Object obj) throws Exception {
-        if (obj instanceof PessoaJuridica) {
-            PessoaJuridica pj = (PessoaJuridica) obj;
-            this.pessoasJuridicas.add(pj);
-        }
+
+        PessoaJuridica pj = (PessoaJuridica) obj;
+        this.pessoasJuridicas.add(pj);
+
     }
 
     @Override
     public void excluir(Object obj) throws Exception {
-        if (obj instanceof PessoaJuridica) {
-            PessoaJuridica pj = (PessoaJuridica) obj;
-            this.pessoasJuridicas.remove(pj);
-        }
+
+        PessoaJuridica pj = (PessoaJuridica) obj;
+        this.pessoasJuridicas.remove(pj);
+
     }
 
     @Override
     public List<PessoaJuridica> getList() {
         return this.pessoasJuridicas;
     }
-    
+
 }

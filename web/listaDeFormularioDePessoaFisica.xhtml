@@ -14,18 +14,21 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <p:commandButton value="Novo" action="#{guiPessoaFisica.novo()}" ajax="false" />
-        <p:dataTable id="tablePessoas" value="#{guiPessoaFisica.pessoasFisicas}" var="pessoa">
-            
-            <p:column headerText="Código"><p:outputLabel value="#{pessoa.id}" /></p:column>
-            <p:column headerText="CPF"><p:outputLabel value="#{pessoa.cpf}" /></p:column>
-            <p:column headerText="Nome"><p:outputLabel value="#{pessoa.nome}" /></p:column>
-            <p:column headerText="Endereço"><p:outputLabel value="#{pessoa.endereco}" /></p:column>
-            <p:column headerText="Telefone"><p:outputLabel value="#{pessoa.telefone}" /></p:column>
-            <p:column headerText="Ações">
-                <p:commandButton value="Alterar" action="#{guiPessoaFisica.alterar(pessoa)}" ajax="false" />
-                <p:commandButton value="Excluir" ajax="false" action="#{guiPessoaFisica.excluir(pessoa)}" update="tablePessoas"/>
-            </p:column>
-        </p:dataTable>
+        <h:form>
+            <p:commandButton value="Novo" action="#{guiPessoaFisica.novo()}" ajax="false" />
+            <p:dataTable id="tablePessoas" value="#{guiPessoaFisica.pessoasFisicas}" var="pessoa">
+
+                <p:column headerText="Código"><p:outputLabel value="#{pessoa.id}" /></p:column>
+                <p:column headerText="CPF"><p:outputLabel value="#{pessoa.cpf}" /></p:column>
+                <p:column headerText="Nome"><p:outputLabel value="#{pessoa.nome}" /></p:column>
+                <p:column headerText="Endereço"><p:outputLabel value="#{pessoa.endereco}" /></p:column>
+                <p:column headerText="Telefone"><p:outputLabel value="#{pessoa.telefone}" /></p:column>
+                <p:column headerText="Ações">
+                    <p:commandButton value="Alterar" action="#{guiPessoaFisica.alterar(pessoa)}" ajax="false" />
+                    <p:commandButton value="Excluir" ajax="false" action="#{guiPessoaFisica.excluir(pessoa)}" update="tablePessoas"/>
+                </p:column>
+                
+            </p:dataTable>
+        </h:form>
     </h:body>
 </html>
